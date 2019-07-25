@@ -1,0 +1,47 @@
+.container{
+    max-width: 400px !important;
+}
+
+input[type=text],
+input[type=text]:focus{
+    color: antiquewhite;
+    border: none;
+    background: rgba(0, 0, 0, .5);
+    max-width: 400px !important;
+}
+
+.todos li{
+    background: rgb(10, 31, 43, .9);
+    font-family: 'Questrial', sans-serif;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.todo-item{
+    margin-bottom: 3px;
+}
+
+.heading{
+    font-family: 'Pacifico', cursive;
+}
+
+.search,.add{
+    font-family: 'Comfortaa', cursive;
+}
+
+.filtered {
+    display: none !important;
+}
+/* .vanta-canvas{
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+canvas{
+    height:100%;
+    padding:0;
+    margin:0;
+} */
