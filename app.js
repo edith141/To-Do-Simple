@@ -25,7 +25,7 @@ else {
     LocList = [];
     id = 0;
 }
- 
+
 // let data = localStorage.getItem("TODO");
 
 // if (data) {
@@ -46,15 +46,15 @@ else {
 
 
 function addToTodo(todo, id, trash) {
-    
+
     if (trash) { return; }
-    
+
     const html = `<li class="todo-item list-group-item d-flex justify-content-between align-items-center">
     <span>${todo}</span>
-    <i class="fas fa-backspace delete" id = "${id}"></i>
+    <i class="fas fa-check-circle delete" id = "${id}"></i>
     </li>`;
     todoList.innerHTML += html;
-    
+
 }
 
 // const filterTodos = (sch) =>{
@@ -63,7 +63,7 @@ function addToTodo(todo, id, trash) {
 //     console.log(tlist);
 // }
 
-function loadList(arr)  {
+function loadList(arr) {
     arr.forEach((i) => {
         addToTodo(i.name, i.id, i.trash);
     })
@@ -86,8 +86,8 @@ addForm.addEventListener('submit', (e) => {
         id += 1;
         localStorage.setItem("TODO", JSON.stringify(LocList));
     }
-    
-    
+
+
 })
 
 //del
@@ -102,21 +102,21 @@ todoList.addEventListener('click', (e) => {
 
 const filterTodos = (t) => {
     Array.from(todoList.children)
-    .filter((tod) => {
-        return !(tod.textContent.toLowerCase().includes(t.toLowerCase()))
-    })
-    .forEach((tod) => {
-        tod.classList.add('filtered');
-    })
-    
-    
+        .filter((tod) => {
+            return !(tod.textContent.toLowerCase().includes(t.toLowerCase()))
+        })
+        .forEach((tod) => {
+            tod.classList.add('filtered');
+        })
+
+
     Array.from(todoList.children)
-    .filter((tod) => {
-        return (tod.textContent.toLowerCase().includes(t.toLowerCase()))
-    })
-    .forEach((tod) => {
-        tod.classList.remove('filtered');
-    })
+        .filter((tod) => {
+            return (tod.textContent.toLowerCase().includes(t.toLowerCase()))
+        })
+        .forEach((tod) => {
+            tod.classList.remove('filtered');
+        })
 };
 
 
