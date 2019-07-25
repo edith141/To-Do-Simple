@@ -13,12 +13,45 @@ VANTA.WAVES({
 const addForm = document.querySelector(".add");
 const search = document.querySelector(".search");
 const todoList = document.querySelector('.todos');
+const heading = document.querySelector(".heading");
+let LocList, id;
+let data = localStorage.getItem("TODO");
+if (data) {
+    LocList = JSON.parse(data);
+    id = LocList.length;
+    loadList(LocList);
+}
+else {
+    LocList = [];
+    id = 0;
+}
+ 
+// let data = localStorage.getItem("TODO");
+
+// if (data) {
+//     LocList = JSON.parse(data);
+//     id = LocList.length;
+//     loadList(LocList);
+// }
+// else {
+//     LocList = [];
+//     id = 0;
+// }
+
+// const loadList = (array) => {
+//     array.forEach((item) => {
+//         addToTodo(item.name, item.id, item.trash);
+//     })
+// }
 
 
-const addToTodo = (todo) =>{
+function addToTodo(todo, id, trash) {
+    
+    if (trash) { return; }
+    
     const html = `<li class="todo-item list-group-item d-flex justify-content-between align-items-center">
     <span>${todo}</span>
-    <i class="fas fa-backspace delete"></i>
+    <i class="fas fa-backspace delete" id = "${id}"></i>
     </li>`;
     todoList.innerHTML += html;
     
@@ -30,17 +63,28 @@ const addToTodo = (todo) =>{
 //     console.log(tlist);
 // }
 
+function loadList(arr)  {
+    arr.forEach((i) => {
+        addToTodo(i.name, i.id, i.trash);
+    })
+}
 
-
-addForm.addEventListener('submit', (e)=> {
+addForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const todo = addForm.add.value.trim();
-    if (todo){
+    if (todo) {
         // console.log(todo.trim());
-        addToTodo(todo.trim());
+        addToTodo(todo.trim(), id, false);
         addForm.add.value = "";
         //or
         //addForm.reset();
+        LocList.push({
+            'name': todo,
+            'id': id,
+            'trash': false
+        });
+        id += 1;
+        localStorage.setItem("TODO", JSON.stringify(LocList));
     }
     
     
@@ -48,10 +92,11 @@ addForm.addEventListener('submit', (e)=> {
 
 //del
 todoList.addEventListener('click', (e) => {
-    if (e.target.classList.contains('delete'))
-    {
+    if (e.target.classList.contains('delete')) {
         e.target.parentElement.remove();
-    } 
+        LocList[e.target.id].trash = true;
+        localStorage.setItem("TODO", JSON.stringify(LocList));
+    }
 })
 
 
@@ -60,7 +105,7 @@ const filterTodos = (t) => {
     .filter((tod) => {
         return !(tod.textContent.toLowerCase().includes(t.toLowerCase()))
     })
-    .forEach( (tod) => {
+    .forEach((tod) => {
         tod.classList.add('filtered');
     })
     
@@ -69,7 +114,7 @@ const filterTodos = (t) => {
     .filter((tod) => {
         return (tod.textContent.toLowerCase().includes(t.toLowerCase()))
     })
-    .forEach( (tod) => {
+    .forEach((tod) => {
         tod.classList.remove('filtered');
     })
 };
@@ -83,4 +128,9 @@ search.addEventListener("keyup", (e) => {
 
 search.addEventListener('submit', (e) => {
     e.preventDefault();
+});
+
+heading.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
 });
