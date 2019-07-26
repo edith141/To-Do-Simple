@@ -10,6 +10,15 @@ VANTA.WAVES({
 //     waveSpeed: 0.40,
 //     color: 0x121e
 // });
+let date = new Date();
+const delem = document.querySelector('.today');
+options = {'weekday': 'long', 'month': 'short', 'day': 'numeric'};
+today = date.toLocaleDateString('en-US', options);
+console.log(today);
+delem.textContent = `${today}`;
+
+
+
 const addForm = document.querySelector(".add");
 const search = document.querySelector(".search");
 const todoList = document.querySelector('.todos');

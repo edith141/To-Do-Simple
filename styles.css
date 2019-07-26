@@ -10,6 +10,19 @@ input[type=text]:focus{
     max-width: 400px !important;
 }
 
+i{
+    /* margin: 8px; */
+    margin: 6px;
+}
+
+/* .todo-item{
+    padding-bottom: auto;
+    padding-left: auto;
+    padding-top: auto;
+    padding-right: 3px;
+} */
+
+
 .todos li{
     background: rgb(10, 31, 43, .9);
     font-family: 'Questrial', sans-serif;
@@ -25,11 +38,33 @@ input[type=text]:focus{
 
 .heading{
     font-family: 'Pacifico', cursive;
+    cursor: pointer;
 }
 
 .search,.add{
     font-family: 'Comfortaa', cursive;
 }
+
+.dateview{
+    font-family: 'Comfortaa', cursive;
+    font-size: 110%;
+    padding-bottom: 8px;
+
+}
+
+.con {
+    display: flex;
+    align-items: center;
+}
+
+hr{
+    width: 25%;
+    align-content: center;
+    display: inline-block;
+    border: .03rem solid white;
+    border-radius: 1rem;
+}
+
 
 .filtered {
     display: none !important;
