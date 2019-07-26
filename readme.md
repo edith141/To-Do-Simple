@@ -9,4 +9,5 @@ This is a simple ToDo list app. Bootstrap and  some custom CSS is used for styli
 ## Screenshots
 Link:  https://bit.ly/2GupPUU
 
-![Screenshot_2019-07-26-14-50-39-011_com android chrome](https://user-images.githubusercontent.com/53191150/61942228-9af27380-afb6-11e9-8dbc-40b30ac9cce5.png)
+![Screenshot_2019-07-26-14-50-39-011_com android chrome](https://user-images.githubusercontent.com/53191150/61942404-f6246600-afb6-11e9-88ff-a62dd9291689.png)
+
