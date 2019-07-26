@@ -1,56 +1,78 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#07212F" />
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa|Pacifico|Questrial&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <title>To-Do</title>
 </head>
+
 <body class="bd">
     
     <div class="container">
         
         <header class="text-center text-light my-4">
             <h1 class="mb-4 heading">ToComo</h1>
-            <form action = "" class="search">
+            <form action="" class="search">
                 <input type="text" name="search" placeholder="Search..." class="form-control m-auto">
             </form>
         </header>
         
         <ul class="list-group todos bbb mx-auto text-light">
             <li class="todo-item list-group-item d-flex justify-content-between align-items-center">
-                <span>Wear the cape</span>
-                <i class="fas fa-backspace delete"></i>
+                <span>This is a simple todo list</span>
+                <i class="fas fa-check-circle delete"></i>
             </li>
             <li class="todo-item list-group-item d-flex justify-content-between align-items-center">
-                <span>Save the world!</span>
-                <i class="fas fa-backspace delete"></i>
+                <span>Press the <span class='heading'>ToComo</span> logo to reload the storage</span>
+                <i class="fas fa-check-circle delete"></i>
             </li>
             <li class="todo-item list-group-item d-flex justify-content-between align-items-center">
-                <span>Eat Shawarma!</span>
-                <i class="fas fa-backspace delete"></i>
-            </li>
-        </ul>
+                <span>Click the <i class="fas fa-check-circle delete"></i> button on the right to mark tasks as
+                    finish</span>
+                    <i class="fas fa-check-circle delete"></i>
+                </li>
+                <li class="todo-item list-group-item d-flex justify-content-between align-items-center">
+                    <span>Use the field below to add new tasks</span>
+                    <i class="fas fa-check-circle delete"></i>
+                </li>
+            </ul>
+            
+            <form action="" class="add text-center my-4">
+                <label class="text-light">New Task</label>
+                <input type="text" name="add" placeholder="Add a new task here!" class="form-control m-auto">
+            </form>
+            
+            
+            
+        </div>
         
-        <form action="" class="add text-center my-4">
-            <label class="text-light">New Task</label>
-            <input type="text" name="add" placeholder="Add a new task here!" class="form-control m-auto">
-        </form>
         
-        
-        
-    </div>
+        <script src="three.r92.min.js"></script>
+        <script src="vanta.waves.min.js"></script>
+        <script src="https://kit.fontawesome.com/33c4382f99.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+    </body>
     
-    
-    <script src="three.r92.min.js"></script>
-    <script src="vanta.waves.min.js"></script>
-    <script src="https://kit.fontawesome.com/33c4382f99.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="app.js"></script>   
-</body>
-</html>
+    </html>
